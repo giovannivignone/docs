@@ -1,0 +1,13 @@
+---
+title: 'Misuse of Create2 Opcode'
+---
+
+The CREATE2 opcode can interact with addresses that do not exist yet on-chain but could eventually contain code, potentially opening the door to an attacker to control that code. While this can be useful for deployments and counterfactual interactions with contracts, it can allow external calls to code that is not yet known, and could turn out to be malicous or insecure due to errors or weak protections.
+
+Best practices are to:
+
+1. **Avoid Risky Opcodes**: Do not use **`selfdestruct()`**, **`delegatecall()`**, or **`callcode()`** in contracts meant to be deployed using **`CREATE2`**. These opcodes can modify a contract's behavior or destroy it, making the code deployed at the address hard to predict.
+
+2. **Beware of Future Deployments**: Recognize that **`CREATE2`** allows for interactions with addresses that haven't been deployed yet. Be cautious about making external calls to addresses created with **`CREATE2`** until you're certain of the deployed code at that address. Unknown or malicious code could be deployed there later.
+
+Octane will flag use of the Create2 opcode.

@@ -1,0 +1,7 @@
+---
+title: 'Incorrect Function Visibility'
+---
+
+State-changing functions are often guarded by outer functions that may only be accessed by authorized users or by first passing a sequence of access control conditions.
+
+However, such state-changing functions may be inadvertently marked as public. Octane will flag such functions that may be improperly left unprotected.

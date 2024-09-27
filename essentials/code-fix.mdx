@@ -1,0 +1,16 @@
+---
+title: 'Code Fix Engine'
+description: 'Once a vulnerability is detected, the Code Fix Engine kicks into gear to automatically draft a secure fix.'
+icon: 'wrench'
+---
+
+When Octane finds a potential vulnerability in your smart contracts, Octane’s Code Fix engine automatically kicks in to better understand the surrounding code, the underlying vulnerability, the intention of the developers, and draft a fix to the vulnerability.
+
+Octane’s Code Fix Engine is trained from the ground up to best fix vulnerabilities in solidity smart contracts. After the engine generates a fix, our code explanation engine fires up alongside it to provide an easy-to-understand summarization of why the fix solves the underlying vulnerability, and what it may change about the threat model of the underlying code.
+
+Coming soon is the ability to one-click open a Pull Request on your repository with the draft fix, where humans on your team can give it the final approval before being merged in.
+
+While it specializes in issues detected by Octane, the Code Fix Engine may also be accessed by itself following an audit to suggest fixes for each of the auditor-identified issues.
+
+This can massively cut down on the cost and time needed to send back code to auditors for reevaluation.
+found

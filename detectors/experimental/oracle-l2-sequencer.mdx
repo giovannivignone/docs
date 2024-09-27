@@ -1,0 +1,7 @@
+---
+title: Improper/Missing L2 Sequencer Check
+---
+
+If a smart contract on an L2 fetches external data, it must first check that the L2 Sequencer is active. If the contract does not perform this check, and the L2 Sequencer is down when the contract fetches data from an external source, that source may return stale or incorrect data. This can lead to many serious downstream consequences.
+
+Octane will flag and detect whenever the contract fetches external data without first checking that the L2 Sequencer is active.

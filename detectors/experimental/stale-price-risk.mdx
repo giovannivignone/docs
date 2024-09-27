@@ -1,0 +1,17 @@
+---
+title: 'Stale Price Risk'
+---
+
+Stale Price Risk vulnerabilities, as the name suggests, arise from the use of outdated
+or 'stale' price data in smart contracts.
+
+These errors occur when a contract fetches and uses asset price information from external oracles or data feeds that are not current, or not properly checked for freshness, leading to potential inaccuracies in valuation and thus arbitrage by malicious actors.
+
+Key causes include insufficient validation of data freshness, using a single heartbeat interval for multiple feeds with different update frequencies, or not accounting for disruptions in data availability such as outages in oracle services or blockchain network issues.
+
+In general, measures to mitigate Stale Price Risk vulnerabilities include using multi-tiered
+validation mechanisms to keep price data fresh, separating heartbeat intervals
+for different data feeds, and incorporating fallback methods and circuit breakers
+to handle oracle downtime or errors.
+
+Octane will detect and flag stale price risks, especially those involved in DeFi contracts.

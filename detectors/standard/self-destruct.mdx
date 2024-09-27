@@ -1,0 +1,9 @@
+Unsafe Use of Self-Destruct
+
+###
+
+Octane generally recommends against the use of selfdestruct() instruction or its now-deprecated alias suicide() as it can potentially allow malicious code to destroy a contract and steal any Ether held by the contract.
+
+Users interacting with the smart contract will find that transfer calls to the destroyed contract don’t revert, instead their tokens suddenly disappear as ether sent to the destroyed contract is lost forever.
+
+Octane will detect such unsafe use of self-destruct. This detection can be overridden if the call is carefully protected and can only be called by authorized users.

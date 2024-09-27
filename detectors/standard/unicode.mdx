@@ -1,0 +1,9 @@
+---
+title: 'Unsafe Unicode Characters'
+---
+
+Octane recommends against using any of the Unicode Direction Control Characters (U+2066, U+2067, U+2068, U+2029,U+202A, U+202B, U+202C, U+202D, or U+202E).
+
+The use of unicode direction control characters can sneakily mislead reviewers and users of the smart contract as the text may be processed by the compiler in a different order than the reviewer expects.
+
+Octane will detect and flag such invisible unicode direction control characters, which may be used to mask malicious code or code errors.

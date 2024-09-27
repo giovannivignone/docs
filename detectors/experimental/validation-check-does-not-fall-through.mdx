@@ -1,0 +1,7 @@
+---
+title: Validation Check Does Not Fall Through
+---
+
+If a contract has a series of validation checks that ought to occur in sequence, a vulnerability may occur where a ‘success’ state is prematurely assigned. Subsequent necessary conditions can then be bypassed.
+
+Octane will detect and flag when success conditions are assigned prematurely and checks are not exhaustive.

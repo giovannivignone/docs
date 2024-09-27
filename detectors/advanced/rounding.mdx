@@ -1,0 +1,13 @@
+---
+title: Rounding Errors
+---
+
+Rounding vulnerabilities arise when a program performs an arithmetic operation that results in a fractional number, and then rounds the result to the nearest integer or a certain number of decimal places.
+
+Especially in financial or token-related smart contracts, values are often represented in the smallest denominations (e.g., wei in Ethereum), which are integers. When divided, allocation of percentages or conversion between different units occurs. The resulting quotient may be a non-integer, necessitating a rounding operation.
+
+This loss of precision can cause either a tiny surplus or deficit. Over time, or across many transactions, these 'dust' amounts can accumulate—potentially causing financial discrepancies, impacting the token economics, or enabling exploits that manipulate rounding to favor certain parties.
+
+For instance, when distributing rewards or allocating fees, improper handling of these rounding errors might cause funds to be locked in a contract, unfairly distributed, or lead to significant precision loss over many transactions.
+
+Rounding errors are often deceptively small and hard to find. Octane searches for such issues and suggests data structures and libraries to use to mitigate the most egregious adverse effects.

@@ -1,0 +1,9 @@
+---
+title: 'Explicit Balance Checks'
+---
+
+Checking if the balance of an account is equal to a specific amount can lead to MEV exploits. An attacker can profit from front-running the user’s transaction or prevent the user from interacting with your contract altogether.
+
+We recommend using the comparison operators `>`, `<`, `>=`, or `<=` instead of using the equality operator `==` when testing the balance of an account against a specified amount or the value of a variable. This helps mitigate MEV exploits where an attacker can front-run the user's transaction and deliberately deposit ether or another token to make the condition fail. For example, instead of: `if (balance == amount) { ... }` Use: `if (balance >= amount) { ... }` By using the comparison operators, you allow for a margin of error in the balance check, reducing the risk of exploits.
+
+Octane will search for such errors, notifying you if you should change the comparison operator you’re using.

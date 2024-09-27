@@ -1,0 +1,7 @@
+---
+title: Token Oversupply by Repayment Without Burn
+---
+
+If the contract uses tokens to track user balances/debts, the corresponding tokens should be burned to prevent an unbacked oversupply of the underlying tokens. Without burning these tokens, the contract’s circulating tokens and underlying collateral may become unbalanced. This can lead to severe economic consequences for the protocol.
+
+Octane will detect and flag whenever a contract uses tokens to track user balances/debts, but does not burn the corresponding tokens.

@@ -1,0 +1,7 @@
+---
+title: 'Hashing Consecutive Variable-Length Arguments'
+---
+
+The elements of each variable-length argument to abi.encodePacked() are packed in order prior to hashing. Hash collisions are possible by rearranging the elements between consecutive, variable length arguments while maintaining that their concatenated order is the same.
+
+Octane will detect and flag use of abi.encodePacked() with consecutive variable length arguments.

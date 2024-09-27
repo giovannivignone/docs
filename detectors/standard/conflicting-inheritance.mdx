@@ -1,0 +1,9 @@
+---
+title: 'Conflicting Inheritance'
+---
+
+In most programming languages, including Solidity, it is possible to use the same name for variables or functions that have different types or (for functions) input parameters. This can be hard to interpret in the source code, meaning reviewers misunderstand the code or are maliciously misled to do so, analogously to Homoglyph Attacks.
+
+Having multiple variables or functions with different code can make code difficult to properly test and potentially open your contract up to more serious vulnerabilities like reentrancy.
+
+Octane will flag any code that goes against this recommend behavior of naming all variables and functions separately to ensure that each function and variable is tested separately and invoked intentionally.

@@ -1,0 +1,11 @@
+---
+title: 'Typographical Errors'
+---
+
+These are some of the most minor yet pernicious errors in smart contract development — minor spelling, syntax, or structural issues that will lead to fundamentally different execution than what the authors expect.
+
+For example, a typographical error can occur when the intent of a defined operation is to sum a number to a variable (+=) but it has accidentally been defined in a wrong way (=+), introducing a typo which happens to be a valid operator. Instead of calculating the sum it initializes the variable again.
+
+Another example is the statement `require(x = true)` which sets x to true instead of checking that the value of x is true.
+
+Octane searches for these small, pernicious errors that—while valid code—may not be the intended flow of the smart contract developers.

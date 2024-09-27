@@ -1,71 +1,50 @@
 ---
-title: Introduction
-description: 'Welcome to the home of your new documentation'
+title: What is Octane?
+description: 'Octane is a developer-first platform to battle-test smart contracts with cutting-edge machine learning. Our engines search for issues in your source code, and show you concretely what matters and how to fix it.'
+icon: 'globe'
 ---
-
-<img
-  className="block dark:hidden"
-  src="/images/hero-light.svg"
-  alt="Hero Light"
-/>
-<img
-  className="hidden dark:block"
-  src="/images/hero-dark.svg"
-  alt="Hero Dark"
-/>
-
-## Setting up
-
-The first step to world-class documentation is setting up your editing environments.
 
 <CardGroup cols={2}>
   <Card
-    title="Edit Your Docs"
-    icon="pen-to-square"
-    href="https://mintlify.com/docs/quickstart"
-  >
-    Get your docs set up locally for easy development
-  </Card>
+    title='When to use Octane'
+    icon='lightbulb'
+    href='essentials/when-to-use'
+  ></Card>
   <Card
-    title="Preview Changes"
-    icon="image"
-    href="https://mintlify.com/docs/development"
-  >
-    Preview your changes before you push to make sure they're perfect
+    title='What Octane detects'
+    icon='radar'
+    href='essentials/what-octane-detects'
+  ></Card>
+</CardGroup>
+
+## Vulnerability Detection
+
+Octane's vulnerability detection system employs state-of-the-art machine learning to precisely identify niche, protocol-specific bugs alongside typical coding issues. This method ensures exceptionally accurate pattern recognition, drastically reducing false alarms and surpassing the capabilities of traditional static analysis.
+
+<CardGroup cols={2}>
+  <Card title='Advanced Detectors' icon='stars' href='detectors/advanced/'>
+    Learn about Octane's advanced detectors
+  </Card>
+  <Card title='Standard Detectors' icon='code' href='detectors/standard'>
+    Learn about Octane's standard detectors
   </Card>
 </CardGroup>
 
-## Make it yours
+## Code Fix Engine
 
-Update your docs to your brand and add valuable content for the best user conversion.
+Octane's Code Fix Engine is built from the ground up to fix vulnerabilities in Solidity smart contracts. Once an issue is identified, Octane's Code Fix Engine spins up automatically to draft a fix. This can massively cut down on the time it takes to fix a vulnerability.
 
-<CardGroup cols={2}>
-  <Card
-    title="Customize Style"
-    icon="palette"
-    href="https://mintlify.com/docs/settings/global"
-  >
-    Customize your docs to your company's colors and brands
+<CardGroup cols={1}>
+  <Card title='Code Fix Engine' icon='wrench' href='essentials/code-fix'>
+    Learn about Octane's Code Fix Engine
   </Card>
-  <Card
-    title="Reference APIs"
-    icon="code"
-    href="https://mintlify.com/docs/api-playground/openapi"
-  >
-    Automatically generate endpoints from an OpenAPI spec
-  </Card>
-  <Card
-    title="Add Components"
-    icon="screwdriver-wrench"
-    href="https://mintlify.com/docs/components/accordion"
-  >
-    Build interactive features and designs to guide your users
-  </Card>
-  <Card
-    title="Get Inspiration"
-    icon="stars"
-    href="https://mintlify.com/customers"
-  >
-    Check out our showcase of our favorite documentation
+</CardGroup>
+## Compliance Engine
+
+Understanding how your smart contracts stack up to industry security best practices is vitally important, especially as smart contracts become increasingly more complex. Octane's Compliance Engine lets you measure how your smart contracts stack up to the EthTrust standard, showing what you need to fix, and even suggesting these fixes in order to become more compliant.
+
+<CardGroup cols={1}>
+  <Card title='Compliance Engine' icon='shield' href='essentials/compliance'>
+    Learn about Octane's Compliance Engine
   </Card>
 </CardGroup>

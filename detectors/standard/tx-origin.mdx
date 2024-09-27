@@ -1,0 +1,9 @@
+---
+title: 'Unsafe Use of Tx Origin'
+---
+
+While msg.sender refers to the address of the most recent caller (either an EOA or a contract), tx.origin refers to the EOA that originally initiated the transaction, regardless of the calls made in between. Using **`tx.origin`** can also expose a contract to phishing attacks.
+
+An attacker can create a malicious contract that tricks a user into interacting with it. If the user initiates a transaction with this malicious contract, **`tx.origin`** would point to the user's EOA. The malicious contract can then call another contract that relies on **`tx.origin`** for authentication, and it would incorrectly authorize the action because it sees the original EOA (the victim) as the transaction origin.
+
+Octane recommends using msg.sender to verify the authenticity of a user instead, and will flag any potential abuses from the use of tx.origin.

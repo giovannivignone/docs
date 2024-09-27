@@ -1,0 +1,9 @@
+---
+title: 'Integer Overflow/Underflow'
+---
+
+If your smart contract uses a version of the solc compiler below 0.8.0, Octane will check for instances of addition, subtraction, multiplication, division, and other arithmetic that may cause a variable to exceed its intended bounds and ‘overflow’ or ‘underflow’ to an unexpected quantity.
+
+Overflow/underflow often lead to unexpectedly high or low values, and are typically remedied by using standards like safeMath from OpenZeppelin or using a more modern solc compiler version.
+
+Octane will flag these instances, filtering for those that are most likely to cause exploitable vulnerabilities.

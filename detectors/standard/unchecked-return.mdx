@@ -1,0 +1,9 @@
+---
+title: 'Unchecked Return Values'
+---
+
+Octane will detect whenever a contract neglects to properly check the return value of an external call.
+
+While some methods like address.transfer() do revert execution if the call fails, other methods like address.send() don’t revert on failure, but instead return true/false and allow execution to proceed.
+
+Yet other methods like call() return a tuple (bool, bytes memory), which indicates whether the call was successful. Because this doesn’t revert if the call fails, it’s important to check the return value with a require, if, or assert.

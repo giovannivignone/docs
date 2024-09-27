@@ -1,0 +1,19 @@
+---
+title: Slippage Parameter Missing or Ineffective
+---
+
+This vulnerability arises when a smart contract fails to include a slippage parameter or implements one that is ineffective, providing inadequate protection against undesirable trade execution conditions for users.
+
+In AMMs or DEXs, slippage is the difference between the expected price of a trade and the executed price. A slippage parameter is typically used to specify the maximum acceptable price deviation for a transaction, mitigating the risk of executing trades at unfavorable rates due to price volatility or manipulation (e.g., sandwich attacks).
+
+An ineffective slippage parameter can be a hardcoded maximum value that effectively disables the check (e.g., 'type(uint256).max'), a static value that does not account for real-time market conditions, or can occur when the parameter is omitted completely from the transaction execution logic.
+
+The absence or ineffectiveness of this parameter opens the door for users to inadvertently make suboptimal trades if market prices move unfavorably after their transaction is broadcast but before it is mined.
+
+Malicious actors can exploit this through maximal extractable value (MEV) strategies by spotting and manipulating pending transactions in the mempool that contain outdated or no slippage protection.
+
+A safe smart contract is one that implements dynamic and time-bound slippage parameters that reflect current market conditions and provide a safeguard against the execution of transactions with excessive price deviation.
+
+Octane will detect and flag contracts that may prove especially harmful to users due to a lack of proper slippage protection, especially if the slippage parameter exists but does not actually properly protect users.
+
+Side note: if using UniswapV3, the sqrtRatioLimit doesn’t provide slippage protection, and instead of reverting when the slippage limit is reached, will cause the swap to partially fill. Octane also detects this edge case.

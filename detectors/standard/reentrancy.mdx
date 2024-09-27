@@ -1,0 +1,17 @@
+---
+title: 'Reentrancy'
+---
+
+Famously the error that took down the DAO, and has taken down a great many protocols since.
+
+Reentrancy allows an attacker to seize control flow and re-invoke your code before the flow you expect is finished executing, often bypassing important safety logic or modifying state multiple times in the process.
+
+Octane checks for violations of the Checks-Effects-Interactions pattern. We define these as
+
+- **Check**: Ensure conditions (e.g., **'require()'** statements) are met.
+- **Effects**: Update any state variables necessary.
+- **Interactions**: Make external calls or send ether last.
+
+Octane also deploys trained simulated attackers that search for such reentrancy vulnerabilities, notifying you if a simulated attacker is able to maliciously reenter smart contracts in your repository.
+
+Octane specifically designates those violations that are most likely to lead to exploitable vulnerabilities.

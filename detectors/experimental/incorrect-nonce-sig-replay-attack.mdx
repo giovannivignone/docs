@@ -1,0 +1,7 @@
+---
+title: Incorrect Nonce Update (Signature Replay Attack)
+---
+
+An incorrect nonce vulnerability occurs when a system's nonce, a one-time number used to prevent replay attacks, is not properly incremented in all cases. This may allow an attacker to replay a user operation because the system does not recognize it as a duplicate. This often happens when the criteria for updating a nonce are too narrow or buried deep inside contract logic.
+
+Octane will detect and flag whenever the nonce is not exhaustively updated, preventing replay attacks from faulty nonce values.

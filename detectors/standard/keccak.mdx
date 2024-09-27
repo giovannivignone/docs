@@ -1,0 +1,11 @@
+---
+title: 'Keccak Unequal Memory Lengths'
+---
+
+Solidity code that has 2 or more occurrences of an instruction keccak(mem,length) where the values of mem are equal, and the values of length are unequal, and the values of length are not multiples of 32, should not use the Optimizer with a Solidity compiler version older than 0.8.3.
+
+Solidity compiler versions before 0.8.3 have an Optimizer bug that meant keccak hashes, calculated for the same content but different lengths that were not multiples of 32 bytes incorrectly used the first value from cache instead of recalculating.
+
+We advise against using keccak256 with a single argument of dynamic type. This is because the length of the dynamic type is hashed along with the content, which can lead to unexpected results. Instead, use keccak256(abi.encodePacked()) to hash the content only.
+
+Octane will detect and flag such issues.

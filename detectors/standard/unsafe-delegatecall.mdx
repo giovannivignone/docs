@@ -1,0 +1,7 @@
+---
+title: 'Unsafe DelegateCall'
+---
+
+The delegatecall() instruction enables an external contract to manipulate the state of a contract that calls it, because the code is run with the caller's balance, storage, and address.
+
+Octane will flag uses of the delegatecall opcode that it deems as potentially unsafe, needing further review.

@@ -1,91 +1,116 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Octane Security",
+  "feedback": { "thumbsRating": true, "suggestEdit": true, "raiseIssue": true },
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/dark.png",
+    "light": "/logo/light.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
-    }
+    "primary": "#0E0E0E",
+    "light": "#FAFAFA",
+    "dark": "#0E0E0E"
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Join the Waitlist",
+    "url": "https://airtable.com/appBjGcVeDKzZJhsn/shrtTaHW5TbENDpTF"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Vulnerability Detectors",
+      "url": "detectors"
     }
   ],
   "anchors": [
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "url": "https://docs.octane.security"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://octane.security"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://octane.security/blog"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
+      "pages": ["introduction", "quickstart"]
+    },
+    {
+      "group": "Advanced",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "detectors/advanced/rounding",
+        "detectors/advanced/dos",
+        "detectors/advanced/balance-gain",
+        "detectors/advanced/ether-token-leaking",
+        "detectors/advanced/incorrect-token-calc",
+        "detectors/advanced/bad-randomness",
+        "detectors/advanced/token-loss",
+        "detectors/advanced/typographic",
+        "detectors/advanced/unprotected-ext-calls"
+      ]
+    },
+    {
+      "group": "Experimental",
+      "pages": [
+        "detectors/experimental/gas-limit-manipulation-1-64-rule",
+        "detectors/experimental/missing-or-improper-admin-address-check",
+        "detectors/experimental/validation-check-does-not-fall-through",
+        "detectors/experimental/incorrect-nonce-sig-replay-attack",
+        "detectors/experimental/oracle-data-check",
+        "detectors/experimental/oversupply-by-repayment-without-burn",
+        "detectors/experimental/writing-to-memory-but-not-storage",
+        "detectors/experimental/incorrectly-payable",
+        "detectors/experimental/oracle-heartbeat",
+        "detectors/experimental/slippage-param-missing-or-ineffective",
+        "detectors/experimental/invalid-state-manipulation",
+        "detectors/experimental/oracle-l2-sequencer",
+        "detectors/experimental/stale-price-risk"
+      ]
+    },
+    {
+      "group": "Standard",
+      "pages": [
+        "detectors/standard/reentrancy",
+        "detectors/standard/block-attrs",
+        "detectors/standard/conflicting-inheritance",
+        "detectors/standard/create2",
+        "detectors/standard/explicit-bal-checks",
+        "detectors/standard/fuzz-delegatecall",
+        "detectors/standard/fuzz-property-violation",
+        "detectors/standard/fuzz-selfdestruct",
+        "detectors/standard/hash-consecutive",
+        "detectors/standard/incorrect-fn-vis",
+        "detectors/standard/keccak",
+        "detectors/standard/assembly",
+        "detectors/standard/overflow-underflow",
+        "detectors/standard/self-destruct",
+        "detectors/standard/tx-origin",
+        "detectors/standard/unchecked-return",
+        "detectors/standard/unicode",
+        "detectors/standard/uninit-storage",
+        "detectors/standard/unsafe-delegatecall"
       ]
     },
     {
       "group": "Essentials",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "essentials/when-to-use",
+        "essentials/what-octane-detects",
+        "essentials/code-fix",
+        "essentials/compliance"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/octane_security"
   }
 }

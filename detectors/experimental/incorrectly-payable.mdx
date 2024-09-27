@@ -1,0 +1,9 @@
+---
+title: Incorrectly Payable
+---
+
+An Incorrectly Payable vulnerability occurs when a specific function is marked with the payable modifier, allowing it to receive tokens, despite the fact that the function does not handle these incoming transactions.
+
+These tokens can sometimes be arbitrarily forwarded, and can cause users to permanently lose funds if the balance they send isn’t properly accounted for in the protocol.
+
+Octane will detect and flag whenever a function is marked as payable but does not have the proper logic to handle incoming token transfers.

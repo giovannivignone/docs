@@ -1,0 +1,9 @@
+---
+title: Gas Limit Manipulation Possible (by 1/64 Rule)
+---
+
+The 1/64 rule established by EIP 150 dictates that when a smart contract function makes an external call, it must retain 1/64th of the current available gas. This reserved gas ensures that the calling contract has sufficient gas to handle any post-call processing or to simply complete its execution gracefully, even if the external call consumes all allotted gas and fails due to an out-of-gas error.
+
+A malicious actor can exploit this by estimating and supplying just enough gas to make the external call fail while leaving some gas in the calling context, manipulating the transaction to fail in a controlled way while preserving the appearance of a normal execution. If the contract does not account for this, an attacker can often pass downstream checks.
+
+Octane will detect and flag whenever a contract does not properly account for the 1/64 rule, and bases logical flow on the assumption that the external call will fail if out of gas.

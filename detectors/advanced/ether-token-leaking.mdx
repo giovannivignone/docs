@@ -1,0 +1,15 @@
+---
+title: 'Ether/Token Leaking'
+---
+
+Ether/Token leakage occurs when the chain’s native currency or some custom tokens (managed directly by the smart contract itself or external contracts) can be stolen by an entity interacting with the smart contract.
+
+There are three ways this typically manifests:
+
+1. Ether or Token leaking due to incorrect function logic
+
+2. Ether or Token leaking due to a privileged user
+
+3. Ether or Token leaking due incorrect visibility (i.e. public burn function for anyones tokens)
+
+Octane will search for each of these conditions individually, flagging if any vulnerable, potentially ether or token-leaking errors are suspected.

@@ -1,0 +1,7 @@
+---
+title: Improper Use of Oracle Heartbeats
+---
+
+A ‘heartbeat’ for an Oracle is crucial for checking the freshness of data coming from an external feed. Oracles for different tokens may have their own feeds (i.e. one may update every hour, another may update every 24h). The contract must use a heartbeat for each token and ensure each token has its own heartbeat interval.
+
+Octane will detect and flag contracts that improperly use heartbeats, or do not use token-specific heartbeats.

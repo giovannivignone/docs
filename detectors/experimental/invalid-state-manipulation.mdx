@@ -1,0 +1,11 @@
+---
+title: 'Invalid State Manipulation'
+---
+
+Broadly, Invalid State Manipulation refers to vulnerabilities in smart contracts where the state of the contract is not managed or updated properly, leading to incorrect state transitions.
+
+Practically speaking, Invalid State Manipulations often stem from contract logic errors, lack of checks on state modifications, or improper access control. Key attributes tend to include erroneous or unnecessary variable updates, a state update that is seemingly unaccounted for by the contract, or race conditions on state updates.
+
+As a consequence, Invalid State Manipulations often lead to DOS errors, user fund loss, contract fund loss, or may be combined with other vulnerabilities to lead to these conditions.
+
+Octane will detect and flag such invalid state manipulations.

@@ -1,0 +1,9 @@
+---
+title: 'Unprotected External Calls'
+---
+
+Unprotected external calls occur when a smart contract calls out to an external contract, but this contract is either user-controlled or otherwise not carefully guarded against malicious behavior.
+
+External calls are inherently risky, as they transfer control flow to an entity that is often not directly controlled by the smart contract author. Such external interactions can allow external actors to manipulate contract behavior or state.
+
+Octane checks for particularly risky invocations of external calls, and flags those that may be either user-controlled or whose effects on state manipulation are not sufficiently protected by the current control flow logic.

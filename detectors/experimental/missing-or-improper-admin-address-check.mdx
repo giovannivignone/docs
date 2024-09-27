@@ -1,0 +1,9 @@
+---
+title: Missing/Improper Check on the Admin Address
+---
+
+A Missing/Improper Check on the Admin Address occurs in the constructor, initialization, or control transfer logic where the admin address to designate to the contract isn’t checked for certain irrecoverable addresses, like the 0 address, or where that check is improperly handled.
+
+This can cause access control issues, unrecoverable funds, or can sometimes lock out all users of the contracts.
+
+Octane will detect and flag whenever the admin address is unchecked or improperly checked.

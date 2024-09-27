@@ -1,0 +1,9 @@
+---
+title: 'Incorrect Calculation of Token Transfer'
+---
+
+This issue arises when a smart contract inadvertently facilitates the improper transfer of Ether or tokens. It's often rooted in flawed calculation logic or unsanitized user inputs, culminating in erroneous token transfers.
+
+A typical instance involves a contract tasked with proportional token distribution based on user stakes. Should the contract's division logic be inadequately implemented, it might result in disproportionate, often excessive, token disbursement.
+
+These small errors often have outsized negative effects. Octane searches for such bugs in token transfer calculations, and groups this vulnerability under the umbrella of Ether/Token leaking.

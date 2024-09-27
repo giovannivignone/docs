@@ -1,0 +1,7 @@
+---
+title: Erroneous Writing to Memory Instead of Storage
+---
+
+If the smart contract modifies a state variable declared withs the memory storage location instead of contract storage, but this variable or its modification are not ephemeral, the state will not be updated as expected on future contract accesses. This can lead to unclaimable funds, unauthorized access, and other serious issues.
+
+Octane will detect and flag whenever the contract writes to memory, but the value is not ephemeral, and the modification ought to be written to storage instead.

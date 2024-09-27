@@ -2,6 +2,6 @@
 title: Missing/Improper Check on Oracle Data
 ---
 
-When fetching data from an external source, the contract must carefully check params of the received data, including the updatedAt for stale data and the return value is in an acceptable range (ie. above 0 for prices). Without these checks, any error or downtime in the oracle can cause stale data throughout the protocol.
+When fetching data from an external source, the contract must carefully check params of the received data, including the updatedAt for stale data and the return value is in an acceptable range (ie. above 0 for prices). Without these checks any error or downtime in the oracle can cause stale data throughout the protocol.
 
 Octane will detect and flag whenever a contract fetches data from an oracle without checking necessary parameters for freshness and authenticity.
